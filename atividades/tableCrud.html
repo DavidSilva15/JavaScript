@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Estilos básicos para o modal */
+        .modal {
+            display: none;
+            /* Escondido por padrão */
+            position: fixed;
+            /* Fixo na tela */
+            z-index: 1;
+            /* Sobrepõe outros elementos */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Largura total */
+            height: 100%;
+            /* Altura total */
+            overflow: auto;
+            /* Permite rolar se necessário */
+            background-color: rgb(0, 0, 0);
+            /* Cor de fundo */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Fundo com transparência */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            /* Centraliza verticalmente */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            /* Largura do modal */
+            max-width: 500px;
+            /* Largura máxima */
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        tr{
+            text-align: center;
+        }
+
+        tr > th{
+            min-width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- O Modal -->
+    <div id="myModal" class="modal">
+        <!-- Conteúdo do Modal -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="formCadastro">
+                <label for="nome">Nome:</label><br>
+                <input type="text" id="nome" name="nome"><br><br>
+                <label for="idade">Idade:</label><br>
+                <input type="number" id="idade" name="idade"><br><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email"><br><br>
+                <input type="submit" value="Salvar">
+            </form>
+        </div>
+    </div>
+
+    <table id="infoTable" border="1">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Email</th>
+                <th colspan="2">Info</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- As linhas serão inseridas aqui via JavaScript -->
+        </tbody>
+    </table>
+    <button class="btnNovoCadastro" style="margin-top: 20px;">Cadastrar</button>
+
+    <script src="tableCrud.js"></script>
+</body>
+
+</html>
